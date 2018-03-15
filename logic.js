@@ -127,7 +127,7 @@ function getColor(d) {
                     "#ffffff";
   }
 
-//need better color scheme 
+//need better color scheme and legend has a white background
 
   legend.onAdd = function (map) {
 
