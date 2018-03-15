@@ -1,4 +1,4 @@
-// Store API endpoint inside queryUrl
+// Store API 
 var url = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson";
 
 var plate = "https://raw.githubusercontent.com/fraxen/tectonicplates/master/GeoJSON/PB2002_plates.json";
@@ -7,11 +7,11 @@ var map = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/light-v9/tiles/25
 
 
 
-// Layer Groups
+
 var earthquakes = new L.layerGroup();
 var faults = new L.layerGroup();
 
-// Define map object
+
 var myMap = L.map("map", {
   center: [46.06, -114.34],
   zoom: 4,
@@ -52,6 +52,7 @@ d3.json(url, function(response) {
     return r*7;
   }
 
+  //figure out how to do circle outlines
 
   
   L.geoJSON(response, {
@@ -96,8 +97,6 @@ d3.json(plate, function(response){
 var satmap = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/satellite-v9/tiles/256/{z}/{x}/{y}?" +
   "access_token=pk.eyJ1IjoiYmJhbGVzMTEiLCJhIjoiY2plYmptdmFwMGRydzJybzdpdzBxazk1aiJ9.ASSE0faIpkFAu87MR5RM0g");
 
-
-// Define baseMaps 
 var baseMaps = {
   "Map": map,
   "Satellite Map": satmap
@@ -128,6 +127,7 @@ function getColor(d) {
                     "#ffffff";
   }
 
+//need better color scheme 
 
   legend.onAdd = function (map) {
 
